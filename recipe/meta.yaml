@@ -25,48 +25,46 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-dt
     - r-attempt
     - r-cli
+    - r-config
     - r-crayon
     - r-desc
     - r-dockerfiler
-    - r-glue
+    - r-fs
+    - r-here
     - r-htmltools
+    - r-jsonlite
     - r-pkgload
-    - r-processx
     - r-remotes
     - r-rlang
     - r-roxygen2
-    - r-rsconnect
     - r-rstudioapi
     - r-shiny
-    - r-stringr
     - r-testthat
     - r-usethis
-    - r-yesno
+    - r-yaml
   run:
     - r-base
-    - r-dt
     - r-attempt
     - r-cli
+    - r-config
     - r-crayon
     - r-desc
     - r-dockerfiler
-    - r-glue
+    - r-fs
+    - r-here
     - r-htmltools
+    - r-jsonlite
     - r-pkgload
-    - r-processx
     - r-remotes
     - r-rlang
     - r-roxygen2
-    - r-rsconnect
     - r-rstudioapi
     - r-shiny
-    - r-stringr
     - r-testthat
     - r-usethis
-    - r-yesno
+    - r-yaml
 
 test:
   commands:
