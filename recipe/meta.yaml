@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/golem_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/golem/golem_{{ version }}.tar.gz
-  sha256: 5ec0b7e005b858d23c4d32e07bb1ca4d0d307ceaf622b68888c506dc9ed2e51d
+  sha256: 9380a2ea62982311daca2058fd0cbb96118a55a49537384f07d7737f52d7aaaa
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -74,8 +74,7 @@ test:
 about:
   home: https://github.com/ThinkR-open/golem
   license: MIT
-  summary: An opinionated framework for building a production-ready 'Shiny' application. This package contains a series of tools for building a robust 'Shiny' application
-    from start to finish.
+  summary: An opinionated framework for building a production-ready 'Shiny' application. This package contains a series of tools for building a robust 'Shiny' application from start to finish.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
