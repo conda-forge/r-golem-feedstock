@@ -25,45 +25,35 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-attempt
-    - r-cli
+    - r-attempt >=0.3.0
+    - r-cli >=2.0.0
     - r-config
     - r-crayon
     - r-desc
-    - r-dockerfiler
     - r-fs
     - r-here
     - r-htmltools
-    - r-jsonlite
     - r-pkgload
-    - r-remotes
-    - r-rlang
     - r-roxygen2
     - r-rstudioapi
-    - r-shiny
-    - r-testthat
-    - r-usethis
+    - r-shiny >=1.5.0
+    - r-usethis >=1.6.0
     - r-yaml
   run:
     - r-base
-    - r-attempt
-    - r-cli
+    - r-attempt >=0.3.0
+    - r-cli >=2.0.0
     - r-config
     - r-crayon
     - r-desc
-    - r-dockerfiler
     - r-fs
     - r-here
     - r-htmltools
-    - r-jsonlite
     - r-pkgload
-    - r-remotes
-    - r-rlang
     - r-roxygen2
     - r-rstudioapi
-    - r-shiny
-    - r-testthat
-    - r-usethis
+    - r-shiny >=1.5.0
+    - r-usethis >=1.6.0
     - r-yaml
 
 test:
