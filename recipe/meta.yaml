@@ -1,4 +1,4 @@
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/golem_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/golem/golem_{{ version }}.tar.gz
-  sha256: d1504ab10f5fc46074e4f99fd6a06a35faa613f65c49c7301518d12d233f7456
+  sha256: 94b576387ceeaf678aed2d974ddee84d1f5031315deb0f866510c08172a05366
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -25,45 +25,35 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-attempt
-    - r-cli
+    - r-attempt >=0.3.0
+    - r-cli >=2.0.0
     - r-config
     - r-crayon
     - r-desc
-    - r-dockerfiler
     - r-fs
     - r-here
     - r-htmltools
-    - r-jsonlite
     - r-pkgload
-    - r-remotes
-    - r-rlang
     - r-roxygen2
     - r-rstudioapi
-    - r-shiny
-    - r-testthat
-    - r-usethis
+    - r-shiny >=1.5.0
+    - r-usethis >=1.6.0
     - r-yaml
   run:
     - r-base
-    - r-attempt
-    - r-cli
+    - r-attempt >=0.3.0
+    - r-cli >=2.0.0
     - r-config
     - r-crayon
     - r-desc
-    - r-dockerfiler
     - r-fs
     - r-here
     - r-htmltools
-    - r-jsonlite
     - r-pkgload
-    - r-remotes
-    - r-rlang
     - r-roxygen2
     - r-rstudioapi
-    - r-shiny
-    - r-testthat
-    - r-usethis
+    - r-shiny >=1.5.0
+    - r-usethis >=1.6.0
     - r-yaml
 
 test:
