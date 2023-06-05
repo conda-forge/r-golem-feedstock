@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/golem_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/golem/golem_{{ version }}.tar.gz
-  sha256: bb76f081d2dd818519b0fadfc92cf7ad3ff0673eae3bd0dc2f3522ebf9cc5662
+  sha256: ea7e94378de8af0ae5da4e170205b633e78065bde9ba712207747f5eb3b89b5d
 
 build:
   merge_build_host: true  # [win]
