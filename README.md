@@ -3,11 +3,13 @@ About r-golem-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-golem-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/ThinkR-open/golem
+Home: https://thinkr-open.github.io/golem/
 
 Package license: MIT
 
 Summary: An opinionated framework for building a production-ready 'Shiny' application. This package contains a series of tools for building a robust 'Shiny' application from start to finish.
+
+Development: https://github.com/ThinkR-open/golem
 
 Current build status
 ====================
