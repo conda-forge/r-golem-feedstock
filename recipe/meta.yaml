@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,49 +9,40 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/golem_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/golem/golem_{{ version }}.tar.gz
-  sha256: 86d66415cb117c7a0ad186f174c1d3482565266cbc8b226f9a6853bdf1973f1d
+  sha256: a4058ebc5c09859de616068ebd9dfbcb9447cec4effebc21b1fe301663de86ca
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-attempt >=0.3.0
-    - r-cli >=2.0.0
+    - r-codetools
     - r-config
-    - r-crayon
-    - r-desc
-    - r-fs
-    - r-here
     - r-htmltools
-    - r-pkgload
-    - r-roxygen2
-    - r-rstudioapi
+    - r-rlang >=1.0.0
     - r-shiny >=1.5.0
-    - r-usethis >=1.6.0
     - r-yaml
   run:
     - r-base
     - r-attempt >=0.3.0
-    - r-cli >=2.0.0
+    - r-codetools
     - r-config
-    - r-crayon
-    - r-desc
-    - r-fs
-    - r-here
     - r-htmltools
-    - r-pkgload
-    - r-roxygen2
-    - r-rstudioapi
+    - r-rlang >=1.0.0
     - r-shiny >=1.5.0
-    - r-usethis >=1.6.0
     - r-yaml
 
 test:
@@ -60,7 +51,8 @@ test:
     - "\"%R%\" -e \"library('golem')\""  # [win]
 
 about:
-  home: https://github.com/ThinkR-open/golem
+  home: https://thinkr-open.github.io/golem/
+  dev_url: https://github.com/ThinkR-open/golem
   license: MIT
   summary: An opinionated framework for building a production-ready 'Shiny' application. This package contains a series of tools for building a robust 'Shiny' application from start to finish.
   license_family: MIT
