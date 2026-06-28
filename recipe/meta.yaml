@@ -17,41 +17,32 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-attempt >=0.3.0
-    - r-cli >=2.0.0
+    - r-codetools
     - r-config
-    - r-crayon
-    - r-desc
-    - r-fs
-    - r-here
     - r-htmltools
-    - r-pkgload
-    - r-roxygen2
-    - r-rstudioapi
+    - r-rlang >=1.0.0
     - r-shiny >=1.5.0
-    - r-usethis >=1.6.0
     - r-yaml
   run:
     - r-base
     - r-attempt >=0.3.0
-    - r-cli >=2.0.0
+    - r-codetools
     - r-config
-    - r-crayon
-    - r-desc
-    - r-fs
-    - r-here
     - r-htmltools
-    - r-pkgload
-    - r-roxygen2
-    - r-rstudioapi
+    - r-rlang >=1.0.0
     - r-shiny >=1.5.0
-    - r-usethis >=1.6.0
     - r-yaml
 
 test:
@@ -60,7 +51,8 @@ test:
     - "\"%R%\" -e \"library('golem')\""  # [win]
 
 about:
-  home: https://github.com/ThinkR-open/golem
+  home: https://thinkr-open.github.io/golem/
+  dev_url: https://github.com/ThinkR-open/golem
   license: MIT
   summary: An opinionated framework for building a production-ready 'Shiny' application. This package contains a series of tools for building a robust 'Shiny' application from start to finish.
   license_family: MIT
