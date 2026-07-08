@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/golem_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/golem/golem_{{ version }}.tar.gz
-  sha256: a4058ebc5c09859de616068ebd9dfbcb9447cec4effebc21b1fe301663de86ca
+  sha256: ceee20e347b952477ddfcbd4f0502ce89f51c91dacd336c7fffa69df3d5135ba
 
 build:
   number: 0
